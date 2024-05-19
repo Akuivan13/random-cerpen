@@ -13,7 +13,7 @@ app.get('/randomcerpen', async (req, res) => {
 });
 
 // Menyajikan file statis dari direktori 'random-cerpen' untuk mengakses halaman web
-app.use(express.static('random-cerpen'));
+app.use(express.static(path.join(__dirname, 'random-cerpen')));
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
