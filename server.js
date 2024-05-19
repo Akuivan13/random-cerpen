@@ -1,11 +1,9 @@
 const express = require('express');
 const dScrape = require('d-scrape');
-
 const app = express();
-const port = process.env.PORT || 3000; // Menggunakan port yang disediakan oleh lingkungan atau port 3000 secara lokal
+const port = process.env.PORT || 3000; // Menggunakan PORT dinamis untuk deployment di Vercel
 
-// Endpoint API untuk mendapatkan cerpen acak
-app.get('/api/randomcerpen', async (req, res) => {
+app.get('/randomcerpen', async (req, res) => {
     try {
         const cerpen = await dScrape.random.randomCerpen();
         res.json(cerpen);
@@ -14,7 +12,8 @@ app.get('/api/randomcerpen', async (req, res) => {
     }
 });
 
-// Tidak perlu menggunakan express.static untuk file statis
+// Menyajikan file statis dari direktori 'random-cerpen' untuk mengakses halaman web
+app.use(express.static('random-cerpen'));
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
