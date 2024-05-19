@@ -1,0 +1,118 @@
+/* Responsif layout */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        max-height: calc(100vh - 130px); /* Sesuaikan dengan tinggi footer dan header */
+        overflow-y: auto;
+    }
+
+    #cerita {
+        max-height: calc(100vh - 230px); /* Sesuaikan dengan tinggi footer dan header */
+        overflow-y: auto;
+    }
+
+    .footer {
+        padding: 5px 0; /* Mengurangi padding footer */
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 20px;
+        max-width: 800px; /* Batasi lebar konten agar tidak terlalu lebar */
+        margin: 0 auto; /* Pusatkan konten di layar dekstop */
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: calc(100vh - 160px);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#judul {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+#penulis {
+    font-style: italic;
+    color: #666;
+    margin-top: 10px;
+}
+
+#sumber {
+    margin-top: 10px;
+}
+
+#sumber a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#sumber a:hover {
+    text-decoration: underline;
+}
+
+#cerita {
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.btn-outline-primary.favorited {
+    color: #ffc107;
+}
+
+.card-text {
+    margin-bottom: 10px;
+}
+
+/* Styling footer */
+.footer {
+    background-color: #f8f9fa;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contributors {
+    list-style: none;
+    padding: 0;
+}
+
+.contributors li {
+    display: inline-block;
+    margin-right: 10px;
+    color: #666;
+}
