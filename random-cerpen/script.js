@@ -1,9 +1,8 @@
 document.getElementById('fetchButton').addEventListener('click', fetchCerpen);
 
-
 async function fetchCerpen() {
     try {
-        const response = await fetch('/randomcerpen');
+        const response = await fetch('/api/randomcerpen'); // Update endpoint to match server.js
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
